@@ -1,0 +1,27 @@
+<h2>Let us know what's wrong</h2>
+{{#if message}}
+<div class="message">{{message}}</div>
+{{/if}}
+<form action="/contact" method="POST">
+	<div class="form-group">
+		<label for="name">😎 Name</label>
+		<input id="name" name="name" type="text">
+	</div>
+	<div class="form-group">
+		<label for="email">✉️ Email</label>
+		<input id="email" name="email" type="email">
+	</div>
+	<div class="form-group">
+		<label for="subject">❔ Subject</label>
+		<input id="subject" name="subject" type="text">
+	</div>
+	<div class="form-group">
+		<label for="order-number">#️⃣ Order number</label>
+		<input id="order-number" name="order-number" type="text">
+	</div>
+	<div class="form-group">
+		<label for="description">🗒️ Description</label>
+		<textarea id="description" name="description" type="text"></textarea>
+	</div>
+	<button type="submit">Send message 🚀</button>
+</form>
