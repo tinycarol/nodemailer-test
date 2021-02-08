@@ -5,6 +5,8 @@ const hbs = require("hbs");
 const logger = require("morgan");
 const createError = require("http-errors");
 
+const { sendMessageAck } = require("./config/mailer.config");
+
 // Express config
 const app = express();
 app.use(express.json());
@@ -23,10 +25,10 @@ app.get("/", (req, res, next) => {
 
 app.post("/contact", (req, res, next) => {
   // 1. Send validation email
-  // TODO
+  const { email, subject } = req.body;
+  sendMessageAck(email, subject);
 
   // 2. Render screen letting the user know they'll receive an email
-  console.log(req.body);
   res.render("home", { ...req.body, message: "⭐ We'll get in touch soon ⭐" });
 });
 
